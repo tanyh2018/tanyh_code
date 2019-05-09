@@ -24,6 +24,8 @@ Z=14     #Atomic number
 m_B=Z*(math.log(2*mass_e*v_proton*v_proton/I_si_unit)-v_proton*v_proton/(c*c))
 dE_dx=4*math.pi/(mass_e*c*c)*meta_charge**2/(4*math.pi*8.854*10**(-12))*N_proton_volume*m_B/(v_proton**2)*m_B
 dE_dx_unit=dE_dx/(1.6*10**(-13)*5*10**15)*1.6*10**(-10)/(10**6)   #GeV/m->J/um
+dE_dx_unit1=dE_dx/(1.6*10**(-13)*5*10**15)*10**(3)/(10**3)
+print dE_dx_unit1
 #dE_dx=1.359   #MeV/mm
 print dE_dx_unit
 #dE_dx_unit=dE_dx*1.6*10**(-13)/(10**3)    #J/um
@@ -39,7 +41,7 @@ C_sensor=sensor_mass*C_si
 #Conversion efficiency
 Conversion_eff=1.0
 #number of particle
-N_proton=6*10**15   #24 hours
+N_proton=6*10**15/0.71   #24 hours
 T=dE_dx_unit*sensor_depth*Conversion_eff*N_proton/C_sensor
 print  "the increase tempareture:"  
 print   T    #13 C

@@ -20,12 +20,12 @@ sensor_size=23*26*50*10**(-4)
 sensor_density=2.32   #g/cm-3
 sensor_mass=sensor_size*sensor_density      #g
 
-C_sensor=sensor_mass*C_si
+C_sensor=sensor_mass*C_si 
 
 #Conversion efficiency
 Conversion_eff=1.0
 #number of particle
-N_proton=6*10**15   #24 hours
+N_proton=6*10**15/0.71   #24 hours
 T=dE_dx_unit*sensor_depth*Conversion_eff*N_proton/C_sensor
 print  "the increase tempareture:"  
 print   T    #13 C
